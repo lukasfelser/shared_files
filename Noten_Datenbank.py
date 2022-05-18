@@ -8,7 +8,7 @@ def Note_ausrechnen(kreuzerl, praesentationen, projekt):
     prozent = n_kreuz + n_praes + n_proj
     round_proz = round(prozent, 3)
 
-    notenliste = [100, 90, 80, 70, 60, 50]
+    notenliste = [100, 91, 80, 70, 60, 50]
 
     note = 0
 
@@ -24,6 +24,7 @@ def Note_ausrechnen(kreuzerl, praesentationen, projekt):
         note = 1
 
     fuer_besser = round((notenliste[note-1] - prozent)*2.5 , 3)
+    abgebbar = (prozent - 91)*2.5
 
     if note != 1:
         print(f'Du hast insgesamt {round_proz} Prozent und damit einen {note}er! \nFür einen {note-1}er bräuchtest du {fuer_besser} Prozent zusätzlich in der Projektpräsentation.')
@@ -32,7 +33,7 @@ def Note_ausrechnen(kreuzerl, praesentationen, projekt):
         else:
             print('Das wird leider nix, so viele Punkte sind in der Projektpräsentation nicht über!')
     else:
-        print('Herzlichen Glückwunsch! Du hast einen Einser! Woop woop! /(* ___ *)/ ')
+        print('Herzlichen Glückwunsch! Du hast einen Einser! Woop woop! /(* ___ *)/ \nInsgesamt hast du {round_proz} Prozent. Du könntest also {abgebbar} Prozent in der Projektpräsentation abgeben und wärst immer noch auf Sehr Gut!')
 
     return note
 
